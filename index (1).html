@@ -1,0 +1,295 @@
+<!DOCTYPE html >
+<html lang="sv" >
+<head >
+<meta charset ="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title>Sju sorters kakor</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+ <div class="topp-bar" id="topp">
+    <p class="topp-titel">Sju sorters kakor</p>
+    <nav class="topp-lankar">
+        <a href="#topp">Hem</a>
+        <a href="#recept">Recept</a>
+    </nav>
+ </div>
+<!--alla "class" som jag har lagt till i mitt html dokument är för att ge elementet "en etikett" så att man kan peka ut just den i CSS, som fungerar på samma sätt i hela html dokumentet där det är utskrivet-->
+<section class="valkomst-sektion">
+<div class="valkomst-kort">
+    <h1>Välkommen till Sju sorters kakor!</h1>
+    <p>Att bjuda på sju sorters kakor är en klassisk svensk fikatradition och syftar på det minsta antalet kaksorter som etiketten tidigare föreskrev att kakfatet ska innehålla. Tanken är att erbjuda ett varierat urval av småkakor så att det finns något för olika smaker: spröda, mjuka, chokladiga, kryddiga och fruktiga kakor. Utöver småkakorna serveras även vetebröd och och tårta. Traditionen förknippas ofta med kafferep och högtider men passar lika bra till vardagsfika eller kalas och har funnits sedan 1800-talet.</p>
+    <p>På den här sidan finns recept på sju sorters kakor att prova på!</p>
+</div>
+<img src="assets/images/bakbord.jpg" alt="Ett bakbord med ingredienser för att baka kakor">
+</section>
+<!-- nav är sidans navigation. En meny som gör det möjligt för användaren att direkt gå till det önskade receptet-->
+<nav id="recept">
+    <h2 class="valj-kaka">Välj en kaka</h2>
+<!-- ul, talar om att listan är osorterad och punkterad, skapar själva "lådan" som håller ihop listan-->
+<!-- li är själva innehållet som du "lägger i lådan"-->
+<!--href och a, a talar om att det är en klickbar länk medans href är själva länkadressen eller "vägen" till vart webbläsaren ska hoppa när man klickar på länken-->
+    <ul>
+        <li><a href="#kaka1"><img src="assets/images/drommmar.jpg" alt="Drömmar"><span>Drömmar</span></a></li>
+        <li><a href="#kaka2"><img src="assets/images/finskapinnar.jpg" alt="Finska pinnar"><span>Finska pinnar</span></a></li>
+        <li><a href="#kaka3"><img src="assets/images/hallongrottor.jpg" alt="Hallongrottor"><span>Hallongrottor</span></a></li>
+        <li><a href="#kaka4"><img src="assets/images/kolasnittar.jpg" alt="Kolasnittar"><span>Kolasnittar</span></a></li>
+        <li><a href="#kaka5"><img src="assets/images/schackrutor.jpg" alt="Schackrutor"><span>Schackrutor</span></a></li>
+        <li><a href="#kaka6"><img src="assets/images/kokostoppar.jpg" alt="Kokostoppar"><span>Kokostoppar</span></a></li>
+        <li><a href="#kaka7"><img src="assets/images/chokladbollar.jpg" alt="Chokladbollar"><span>Chokladbollar</span></a></li>
+    </ul>
+</nav>
+
+<!-- Huvudinnehåll på sidan -->
+ <!--main innebär webbsidans huvudsakliga innehåll och i detta fall är det de sju recepten-->
+<main>
+    <!-- sektion för kaka 1-->
+<!--article använder man för att representera ett självständigt innehåll, i detta fall ett enskilt recept-->
+    <article id="kaka1">
+        <h2>Drömmar</h2>
+<!--img är taggen som berättar att en bild ska visas, den är självständig och behöver därför ingen sluttagg, src står för source och talar om vart bilden finns någonstans, alltså sökvägen till bildfilen, alt är en beskrivning av bilden i textform, tex om en synskadad inte kan visa bilden-->
+        <img src="assets/images/drommmar.jpg" alt="Spröda drömmar med vaniljsmak">
+        <p>Drömmar är mycket spröda småkakor med mild vaniljsmak som är lätta att baka. Hjorthornssalt gör att kakorna får sin karakteristiskt porösa och ljuvligt frasiga konsistens.</p>
+
+        <p><strong>Antal:</strong> 40-45 kakor</p>
+<!-- strong, texten markeras i fet stil, för att läsaren snabbt ska kunna skanna texten och hitta nyckelord-->
+<!-- p skapar ett sammanhängande textstycke, webbläsaren skapar avstånd så det blir lättläst-->
+<!-- ul används också för ingredienslistor-->
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>100 g smör</li>
+            <li>3 dl strösocker</li>
+            <li>1 dl rapsolja</li>
+            <li>2 tsk vaniljsocker</li>
+            <li>1 tsk hjorthornssalt</li>
+            <li>4 dl vetemjöl</li>
+        </ul>
+        <h3 class="rubrik-gor-sa-har">Gör så här</h3>
+<!-- ol är en nummererad lista där ordningen är viktig, kollar vi tillbaka på "låd" exemplet så är detta också en sådan, som håller ihop listan kan man säga-->
+        <ol>
+            <li>Sätt ugnen på 150 .</li>
+            <li>Rör smör och socker mjukt.</li>
+            <li>Tillsätt oljan, lite i taget, under vispning.</li>
+            <li>Blanda vaniljsocker och hjorthornssalt med lite av mjölet och rör ned blandningen i smeten. Tillsätt sedan resten av mjölet.</li>
+            <li>Rulla små bollar av degen och lägg dem på plåtar med bakplåtspapper. </li>
+            <li>Grädda mitt i ugnen i ca 15-20 minuter och låt kallna på plåten.</li>
+        </ol>
+    <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+    </article>
+    <!-- sektion för kaka 2-->
+    <!--Alla resterande kakorna är uppbyggda med samma grundstruktur men kan ha enstaka skillnader, som tex garnering-->
+     <article id="kaka2">
+        <h2>Finska pinnar</h2>
+        <img src="assets/images/finskapinnar.jpg" alt="En skål med mandlar">
+        <p>Finska pinnar är spröda mördegskakor med mandel och pärlsocker på toppen. Trots namnet är de en välkänd klassiker på svenska kakfat.</p>
+        <p><strong>Antal:</strong> ca 60 kakor</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul> 
+            <li>200 g smör</li>
+            <li>1 dl strösocker</li>
+            <li>4,5 dl vetemjöl</li>
+            <li>1 tsk vaniljsocker</li>
+            <li>1 dl mandelmjöl</li>
+            <li>1 äggvita</li>
+            <li>Ca 1 dl hackad sötmandel och 2 msk pärlsocker</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol> 
+            <li>Sätt ugnen på 175 grader</li>
+            <li>Blanda mandel, mjöl och socker och arbeta ihop med tärnat smör till en deg. Låt vila i kylskåp ca 30 minuter.</li>
+            <li>Dela degen i 8 delar och rulla varje del till en 30 cm lång längd.</li>
+            <li>Lägg längderna på en plåt med bakplåtspapper.</li>
+            <li>Vispa upp äggvitan lätt och pensla längderna.</li>
+            <li>Strö över hackad mandl och pärlsocker och dela längderna i ca 4 cm långa bitar. Sära bitarna lite så att de inte fastnar i varandra.</li>
+            <li>Grädda mitt i ugnen i cirka 10-12 minuter.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+    </article>
+<!--sektion för kaka 3-->
+    <article id="kaka3">
+        <h2>Hallongrottor</h2>
+<!--figure är en omslutande tagg för bilder och text till bilden-->
+<!--figcaption används för bildtext, med hjälp av både figure och figcaption så sluts bilden och texten snyggt samman-->
+    <figure>
+    <img src="assets/images/hallongrottor.jpg" alt="En skål med nybakade hallongrottor med härlig hallonsylt">
+    <figcaption>AI-genererad bild.</figcaption>
+    </figure>
+
+        <p>Hallongrottor är mördegskakor med en liten grop fylld med ljuvlig hallonsylt. De är både enkla att baka och uppskattade på kakfatet.</p>
+        <p><strong>Antal:</strong> 20-24 kakor</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>200 g smör eller margarin</li>
+            <li>1 dl strösocker</li>
+            <li>2 tsk vaniljsocker</li>
+            <li>4,5 dl vetemjöl</li>
+            <li>1 tsk bakpulver</li>
+            <li>1 dl fast hallonsylt</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol>
+            <li>Sätt ugnen på 200 grader</li>
+            <li>Arbeta snabbt ihop smör, socker, vaniljsocker, vetemjöl och bakpulver till en deg. Gärna i matbredare.</li>
+            <li>Rulla degen till små bollar och lägg dem i små kakformar ca 5 cm i diameter.</li>
+            <li>Gör en grop i varje kaka med ett finger eller skaftet på en sked.</li>
+            <li>Fyll groparna med hallonsylt.</li>
+            <li>Grädda i cirka 12-15 minuter och låt sedan svalna på galler.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+    </article>
+    <!--Sektion för kaka 4-->
+        <article id="kaka4">
+        <h2>Kolasnittar</h2>
+         <figure>
+    <img src="assets/images/kolasnittar.jpg" alt="En skål med gyllenbruna kolasnittar">
+    <figcaption>AI-genererad bild.</figcaption>
+    </figure>
+ 
+        <p>Kolasnittar är avlånga lite sega småkakor med smak av sirap och vanilj. De skärs i sneda bitar direkt när de kommer ut ur ugnen.</p>
+
+        <p><strong>Antal:</strong> 20 kakor</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>100 g smör</li>
+            <li>1 dl strösocker</li>
+            <li>2 msk mörk sirap</li>
+            <li>2,5 dl vetemjöl</li>
+            <li>1 tsk bakpulver</li>
+            <li>1 tsk vaniljsocker</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol>
+            <li>Sätt ugnen på 175 grader</li>
+            <li>Rör smör, socker och sirap mjukt.</li>
+            <li>Blanda vetemjöl, bakpulver och vaniljsocker. Arbeta sedan ihop med smörsmeten till en deg.</li>
+            <li>Dela degen i två delar och rulla dem till längder ca 40 cm långa.</li>
+            <li>Lägg längderna på en plåt med bakplåtspapper och platta till dem.</li>
+            <li>Grädda mitt i ugnen cirka 12 minuter.</li>
+            <li>Låt kakorna svalna något och skär längderna i sneda bitar medan de fortfarande är varma.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+        </article>
+<!--Sektion för kaka 5-->
+        <article id="kaka5">
+        <h2>Schackrutor</h2>
+            <img src="assets/images/schackrutor.jpg" alt="Den mörka choklad degen blir knådad">
+
+        <p>Schackrutor är klassiska småkakor med ett dekorativt rutmönster av ljus och chokladsmakande mördeg. Kakorna blir spröda och ser mycket läckra ut på kakfatet. De imponerar med sitt utseende men är väldigt enkla att baka.</p>
+
+        <p><strong>Antal:</strong> Ca 50 kakor</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>200 g osaltat smör</li>
+            <li>1 dl strösocker</li>
+            <li>4 dl vetemjöl</li>
+            <li>Ljus deg: 2 tsk vaniljsocker</li>
+            <li>Mörk deg: 2 msk kakao</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol>
+            <li>Ta fram smöret så att det hinner bli rumsvarmt.</li>
+            <li>Vispa ihop smör och socker till en jämn smet.</li>
+            <li>Tillsätt vetemjöl, lite i taget och fortsätt röra tills det blir till stora smulor.</li>
+            <li>Dela degen i två lika stora delar.</li>
+            <li>Arbeta in kakaon i den ena delen och vaniljsocker i den andra så att du får en ljus och en mörk deg.</li>
+            <li>Dela dem två degarna i två delar så du får två ljusa och två mörka delar.</li>
+            <li>Rulla ut till längder och tryck till dem mot bakbordet så längderna får platta kanter. Lägg dem tätt ihop med, med två ovanpå de andra så de bildar ett litet schackmönster.</li>
+            <li>Låt vila i kylen i 1-2 timmar.</li>
+            <li>Sätt ugnen på 200 grader.</li>
+            <li>Ta fram längden och skär ca 3-4 mm tjocka skivor.</li>
+            <li>Lägg kakorna på en plåt med bakplåtspapper och grädda mitt i ugnen i ca 8-10 minuter.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+        </article>
+
+<!-- Sektion för kaka 6-->
+        <article id="kaka6">
+        <h2>Kokostoppar</h2>
+        <figure>
+    <img src="assets/images/kokostoppar.jpg" alt="En skål med nybakade kokostoppar">
+<!--Receptet på kokostoppar är hämtat från ICA. Beskrivningen av kakan är formulerad med egna ord: https://www.ica.se/recept/kokostoppar-714039/-->
+    <figcaption>AI-genererad bild.</figcaption>
+    </figure>
+
+        <p>Kokostoppar är en personlig favorit! De är små, söta och saftiga kakor med smak av kokos. De är enkla att baka och passar perfekt på kakfatet.</p>
+
+        <p><strong>Antal:</strong> Ca 25 kakor</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>50 g smör</li>
+            <li>2 st ägg</li>
+            <li>2 dl strösocker</li>
+            <li>200 g riven kokos</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol>
+            <li>Sätt ugnen på 200 grader.</li>
+            <li>Förbered en ungsplåt med bakplåtspapper.</li>
+            <li>Smält smöret i en kastrull.</li>
+            <li>Rör ihop alla ingredienser i en bunke, vispa inte.</li>
+            <li>Låt smeten svälla i 10 minuter.</li>
+            <li>Klicka ut smp toppar på bakplåtspappret med hjälp av 2 teskedar, eller använd händerna för att forma små toppar och ställ på plåten.</li>
+            <li>Grädda mitt i ugnen i ca 12 minuter tills kokostopparna fått fin färg.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+        </article>
+<!--Sektion för kaka 7-->
+        <article id="kaka7">
+        <h2>Chokladbollar</h2>
+        <figure>
+    <img src="assets/images/chokladbollar.jpg" alt="Ett fat med chokladbollar rullade i kokos">
+<!--Detta är ett recept hämtat från ICA. Beskrivningen av kakan är formulerad med egna ord: https://www.ica.se/recept/chokladbollar-godaste-receptet-5058/-->
+    <figcaption>AI-genererad bild.</figcaption>
+    </figure>
+
+        <p>Chokladbollar är en svensk klassiker som är enkel att baka och uppskattad av både barn och vuxna. De är små, runda och chokladiga med en härlig smak av kaffe och kokos.</p>
+
+        <p><strong>Antal:</strong> Ca 15-20 bollar</p>
+
+        <h3 class="rubrik-ingredienser">Ingredienser</h3>
+        <ul>
+            <li>100 g smör</li>
+            <li>1 dl strösocker</li>
+            <li>1 msk vaniljsocker</li>
+            <li>3 msk kakao</li>
+            <li>3 dl havregryn</li>
+            <li>3 msk kallt starkt kaffe</li>
+            <li>Kokosflingor eller pärlsocker att rulla dem i</li>
+        </ul>
+
+        <h3 class="rubrik-gor-sa-har">Gör såhär</h3>
+        <ol>
+            <li>Smält smöret och låt puttra i 1 minut</li>
+            <li>Blanda strösocker, vaniljsocker, kakao, havregryn, kaffe och smör med en elvisp, går också att knåda med händerna.</li>
+            <li>Ställ in i kylskåpet så att smeten stelnar lite, ca 40 minuter.</li>
+            <li>Forma små bollar och rulla i kokos eller pärlsocker.</li>
+        </ol>
+        <a href="#topp" class="tillbaka-till-toppen">Tillbaka till toppen</a>
+        </article>
+    </main>
+<!--main avslutar även sidans innehåll, med taggen i början och denna i slutet, "ramas" det huvudsakliga innehållet in-->
+<!--footer är en sidofot som innehåller information om en webbsida längst ner, det är slutet på webbplatsen-->
+<!-- jag valde att lägga till en footer med en bild och ett citat, samt copywright (sedan sidigare) och då behövde jag ändra detta i mitt html dokument för att det skulle funka i CSS-->
+    <footer class="sidfot">
+        <img src="assets/images/olikasmakakor.jpg" alt="olika sorters småkakor på ett ljust underlag">
+        <div class="sidfot-text">
+            <p class="sidfot-citat">En fika är aldrig bara en fika.</p>
+            <p class="sidfot-info">© 2026 Maja Andersson.</p>
+        </div>
+    </footer>
+<!--body används även i slutet för att helt enkelt stänga -->
+</body>
+<!--body stänger själva kroppen på webbsidan-->
+<!--html stänger html koden för att tala om för webbläsaren att filen är helt slut-->
+</html>
+

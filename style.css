@@ -1,0 +1,318 @@
+/* Body är grunden för hela webbsidan, nedan har jag bestämt typsnitt, bakgrundsfärg, textfärg, typsnitt och radavstånd*/
+/*Jag nollståller även standardmarginaler*/
+
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: #dec9b1;
+    color: #715c2b;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+/*main är sidans huvudinnehåll, här vill jag ha alla receptkort*/
+/*max-width bestämmer hur bred sidan får vara, margin: 0 auto centrerar innehållet och padding ger utrymme mellan innehållet och kanten på webbläsaren*/
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+/*Navigation med runda kakbilder, huvudnavigering som länkar vidare till avsnitt på webben*/
+/*nav ul tar bort punkteringen på listan, tar bort standardmarginaler och padding, gör att listan blir horisontell och centrerad med mellanrum mellan varje länk*/
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 32px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+/*nav a stilsätter länkarna i navigationen - flex-direction: column lägger bilden ovanför texten och text-decoration tar bort understrykning*/
+nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.85rem;
+    gap: 6px;
+}
+/* nav img stilsätter kakbilderna i menyn och width och height ger dem samma storlek, borderline-radius: 50% gör dem runda och object-fit: cover gör att bilderna fyller cirkeln snyggt och prydligt utan att bli utdragen kan man säga*/
+nav img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Receptkort */
+/*article stilsätter varje enskilt receptkort med ljusbakgrund, rundade hörn, skugga och ett rutnät (grid) som fixar innehåller så det blir i kolumner med mellanrum*/
+article {
+    background-color: #fffdfa;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 20px rgba(47, 42, 38, 0.06);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1.4fr;
+    grid-auto-flow: dense;
+    gap: 12px 28px;
+    align-items: start;
+    }
+
+/* Rubriker och text i kortet */
+/* article h2 placerar kakans rubrik över hela "rutnätets" bredd (1 / -1) på  första raden med större textstorlek för en tydlig rubriknivå*/
+article h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+}
+/* article > p:first-of-type placerar det första stycket (beskrivningen av kakan) på rad 2 över hela bredden och ger det en egen textfärg*/
+article > p:first-of-type {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 0;
+    color: #574f48;
+}
+/* article > p:nth-of-type(2) placerar det andra stycket (antal kakor) på rad 3 över hela bredden med lite mindre textstorlek och marginal nedåt */
+article > p:nth-of-type(2) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+/* Tre kolumner för bild, ingredienser och gör så här på bredare skärmar */
+/* på skärmar minst 750px breda ändrar article till ett rutnät med tre kolumner (1.5fr 1fr 1.2fr) och gör grid-auto-flow: dense för att fylla ut ytor jämnt eller vad man ska säga*/
+@media (min-width: 720px) {
+/* Om du ger >h3 class="rubrik-gor-så-har">gör så här</h3> en klass i HTML: */
+  article {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    grid-auto-flow: dense;
+    gap: 12px 28px;
+    align-items: start;
+  }
+}
+/* article .rubrik-gor-sahar placerar rubriken Gör såhär i den tredje  kolumnen med anpassade marginaler som behövs*/
+    article .rubrik-gor-sa-har 
+    {
+        grid-column: 3;
+        margin-top: 0;
+        margin-bottom: 6px;
+    }
+/* article ol placerar den numererade listan med instruktioner i den tredje kolumnen under Gör såhär och tar bort toppmarginalen */
+    article ol {
+        grid-column: 3;
+        margin-top: 0;
+    }
+/* article .rubrik-ingredienser placerar rubriken Ingredienser  i den mellersta (andra) kolumnen*/
+    article .rubrik-ingredienser {
+        grid-column: 2;
+        margin-top: 0;
+        margin-bottom: 6px;
+    }
+/* article ul placerar ingredienslistan i den andra kolumnen under Ingredienser och nollstället toppmarginalen*/
+    article ul {
+        grid-column: 2;
+        margin-top: 0;
+     
+    }
+/* Rubrik och beskrivning spänner över hela kortets bredd */
+/* kodningen nedan låter rubriken och det andra stycket spänner över alla tre kolumner (1 / -1) på bredare skärmar med toppmarginal */
+    article h2,
+    article > p:nth-of-type(2) {
+        grid-column: 1 / -1;
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+
+/*Placering av de tre spalterna*/
+/* article img placerar kakbilden i första kolumnen på rad 2 och låter den fylla bredden (100%) utan maxbreddsbegränsning och nollställer toppmarginalen */
+    article img {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+    }
+/* koden nedan placerar kakans beskrivning (första stycket) från kolumn 2 till slutet (2 / -1) på rad 2 med nollställd toppmarginal */
+    article >p:first-of-type {
+        grid-column: 2 / -1;
+        grid-row: 2;
+        margin-top: 0;
+    }
+/*Ingredienser i mittenkolumnen*/
+/* article ul placerar ingredienslistan i den andra kolumnen med marginaler, padding-left och italic (en kursiv stil) */
+    article ul {
+        grid-column: 2;
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding-left: 20px;
+        font-style: italic;
+    }
+/*Gör såhär till höger*/
+/* article ol ställer in Gör såhär listan i tredje spalten till höger, tar bort luft uppe och gör texten kursiv med italix */
+    article ol {
+        grid-column: 3;
+        margin-top: 0;
+        padding-left: 20px;
+        font-style: italic;
+    }
+
+/*Bilden i receptetr*/
+/* article img fixar till bilden i receptet, fyller sin plats snyggt, rundar hörnen lite och ser till att den inte blir "skev" på något vis*/
+article img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+/* article h3 är smårubriker i receptkortet, lagom storlek och lite luft under så det inte känns ihoptryckt*/
+article h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+/* Gör både punktlistan och den numererade listan lite indrag till vänster med padding, så att punkterna och siffrorna inte hamnar för nära kanden*/
+article ul,
+article ol {
+    padding-left: 20px;
+}
+/* Lite luft under varje punkt i listorna så det inte känns ihoptryckt*/
+article li {
+    margin-bottom: 6px;
+}
+/* en hoover som gör tillbaka till toppen länken till en liten knapp med en egen färg, rundade hörn och lite luft runt texten */
+.tillbaka-till-toppen {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 14px;
+    background-color: #64563c;
+    color: #dfd2b8;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+/* sträcker under texten när man hovrar över knappen så det syns att den går att klicka på */
+.tillbaka-till-toppen:hover {
+    text-decoration: underline;
+}
+/*på bredare skärmar lägger vi knappen i första kolumnen  så den hamnar snyggt i grid*/
+@media (min-width: 720px) {
+    .tillbaka-till-toppen {
+        grid-column: 1;
+    }
+}
+/* den största huvudrubriken får en mörkare färg och kursiv stil*/
+h1 {
+    color: #531f0f;
+    font-style: italic;
+}
+/* samma mörka ton på h2-rubrikerna så det hähnger ihop lite*/
+h2 {
+    color: #531f0f;
+}
+/* detta centrerar texten för kakvalet så det hamnar mitt i skärmen "välj en kaka"*/
+.valj-kaka { text-align: center;
+}
+/* själva toppbar med bakgrundsfärg, textfärg, lite luft runt om och flexbox som sprider ut titel och länkar */
+.topp-bar {
+    background-color: #dec9b1;
+    color: #715c2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+}
+/* titeln i toppbar - tar bort standardmarginalen och sätter en lagom storlek */
+.topp-titel {
+    margin: 0;
+    font-size: 1.25rem;
+}
+/* lägger menyns länkar på rad med 20px mellanrum så det blir lättare att klicka på*/
+.topp-lankar {
+    display: flex;
+    gap: 20px;
+}
+/* själva länkarna i toppbar - egen färg, ingen understrykning och lagom stor text*/
+.topp-lankar a {
+    color: #715c2b;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+/* koden nedan understryker länken när man för musen över den så man märker att den är klickbar */
+.topp-lankar a:hover {
+    text-decoration: underline;
+}
+/* välkomstsektionen med två kolumner bredvid varandra, lite luft och bakgrundsfärg*/
+.valkomst-sektion {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 24px;
+    background-color: #344e44;
+}
+/* Textkortet i välkomstsektionen med bakgrund, textfärg, luft inuti och en liten mjuk skugga med box shadow*/
+.valkomst-kort {
+    background-color: #fffdfa;
+    color: #715c2b;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 8, 0.08);
+}
+/* välkomstbilden får full bredd i sin kolumn, fast höjd och beskärs snyggt utan att bli lustig*/
+.valkomst-bild {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+/* på mindre skärmar (max 720px) lägger vi välkomstsektionen i en enda kolumn och krymper bildhöjden så det får plats bra*/
+@media (max-width: 720px) {
+    .valkomst-sektion {
+        grid-template-columns: 1fr;
+    }
+    .valkomst-bild {
+        height: 240px;
+    }
+}
+/* === Sidfot (footer) längst ner på sidan === */
+/*Sidfoten längst ner får en mörk ram med avstånd, rundade hörn och flexbox som placerar innehållet snyggt*/
+.sidfot {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background-color: #344e44;
+    border-top: 3px solid #20312b;
+    padding: 24px 32px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+/* Bilden i sidfoten */
+/* bilden i sidfoten får en lagom bredd, anpassar höjden automatiskt, rundar hörn lite och blir ett blockelement*/
+.sidfot img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+/* Citatet och information bredvid bilden */
+/* Själva citatet i sidfoten, kursiv stil, lite större och fetare text med luft under och ljusare färg som syns snyggt mot den mörkare bakgrunden*/
+.sidfot-citat {
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color:#dec9b1;
+}
+/* texten i sidfoten får lite mindre textstorlek och ingen extra marginal så den ligger tätt och bra under citatet*/
+.sidfot-info {
+    font-size: 0.9rem;
+    margin: 0;
+}
